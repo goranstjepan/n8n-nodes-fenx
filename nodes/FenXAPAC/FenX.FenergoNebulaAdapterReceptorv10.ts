@@ -25,7 +25,7 @@ let FenergoNebulaAdapterReceptorv10Properties: INodeProperties[] = [
         default: '',
         required: true,
         description: 'Operation to execute',
-    }, { displayName: 'Request', name: 'request', type: 'json', required: true, default: '{ "creditScreeningEnquiryId": "creditScreeningEnquiryId", "tenant": "tenant", "providerId": "providerId", "requestType": "requestType", "status": "status", "completedOn": "2024-10-07T13:46:54.1763281+00:00", "errorDetails": "errorDetails", "errorCode": "errorCode", "response": {} }', description: 'Request body', displayOptions: { show: { endpoint: [ 'Callback' ], domain: [ 'FenergoNebulaAdapterReceptorv10' ] } } }
+    }, { displayName: 'Request', name: 'request', type: 'json', required: true, default: '{ "creditScreeningEnquiryId": "creditScreeningEnquiryId", "tenant": "tenant", "providerId": "providerId", "requestType": "requestType", "status": "status", "completedOn": "2023-11-30T11:31:44.2066462+00:00", "errorDetails": "errorDetails", "errorCode": "errorCode", "response": {} }', description: 'Request body', displayOptions: { show: { endpoint: [ 'Callback' ], domain: [ 'FenergoNebulaAdapterReceptorv10' ] } } }
 ];
 
 async function ExecuteFenergoNebulaAdapterReceptorv10(base: IExecuteFunctions): Promise < INodeExecutionData[][] > {
