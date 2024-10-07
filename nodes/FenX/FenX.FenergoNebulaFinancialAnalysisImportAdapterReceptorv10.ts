@@ -25,7 +25,7 @@ let FenergoNebulaFinancialAnalysisImportAdapterReceptorv10Properties: INodePrope
         default: '',
         required: true,
         description: 'Operation to execute',
-    }, { displayName: 'Request', name: 'request', type: 'json', required: true, default: '{ "id": "id", "tenant": "tenant", "providerId": "providerId", "requestType": "requestType", "status": "status", "completedOn": "2023-11-30T11:31:47.2877584+00:00", "errorDetails": "errorDetails", "errorCode": "errorCode", "response": {} }', description: 'Request body', displayOptions: { show: { endpoint: [ 'Callback' ], domain: [ 'FenergoNebulaFinancialAnalysisImportAdapterReceptorv10' ] } } }
+    }, { displayName: 'Request', name: 'request', type: 'json', required: true, default: '{ "id": "id", "tenant": "tenant", "providerId": "providerId", "requestType": "requestType", "status": "status", "completedOn": "2024-10-07T13:46:56.4414370+00:00", "errorDetails": "errorDetails", "errorCode": "errorCode", "response": {} }', description: 'Request body', displayOptions: { show: { endpoint: [ 'Callback' ], domain: [ 'FenergoNebulaFinancialAnalysisImportAdapterReceptorv10' ] } } }
 ];
 
 async function ExecuteFenergoNebulaFinancialAnalysisImportAdapterReceptorv10(base: IExecuteFunctions): Promise < INodeExecutionData[][] > {
