@@ -33,7 +33,7 @@ After installing the node, you can use it like any other node. n8n displays the 
 
 ## Operations
 
-Node supports domains and endpoints documented in [Fenergo API Catalog](https://docs.fenergox.com/api-docs)
+Node supports domains and endpoints documented in [Fenergo API Catalog](https://docs.fenergox.com/api-docs/fenergo-saas-api-specifications/introduction)
 
 ## Credentials
 
@@ -46,4 +46,4 @@ Tested against n8n version 1.61.0.
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
-* [Fenergo Documentation](https://docs.fenergox.com/home)
+* [Fenergo Documentation](https://docs.fenergox.com)
