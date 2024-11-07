@@ -13,7 +13,7 @@ let FenergoNebulaBusinessMetricsQueryv10Properties: INodeProperties[] = [
         name: 'endpoint',
         type: 'options',
         options: [
-            { name: 'Get all "journey completed time daily" records', value: 'GetAllJourneyCompletedTimeDailyRecords' },{ name: 'Get "journey completed time daily" records by date range and page', value: 'GetJourneyCompletedDailyRecordsByDateRange' },{ name: 'Get Journey Summary items', value: 'GetJourneySummaryitems' }
+            { name: 'Get all "journey completed time daily" records', value: 'GetAllJourneyCompletedTimeDailyRecords' },{ name: 'Get "journey completed time daily" records by date range and page', value: 'GetJourneyCompletedDailyRecordsByDateRange' },{ name: 'Get Journey Summary items', value: 'GetJourneySummaryitems' },{ name: 'Get daily task metrics by date range', value: 'GetTaskDailyMetricsByDateRange' }
         ],
         displayOptions: {
             show: {
@@ -25,7 +25,7 @@ let FenergoNebulaBusinessMetricsQueryv10Properties: INodeProperties[] = [
         default: '',
         required: true,
         description: 'Operation to execute',
-    }, { displayName: 'Request', name: 'request', type: 'json', required: true, default: '{ "data": { "startDate": "startDate", "endDate": "endDate", "numberOfRecordsToSkip": 0, "recordLimit": 0 } }', description: 'Request body', displayOptions: { show: { endpoint: [ 'GetJourneyCompletedDailyRecordsByDateRange' ], domain: [ 'FenergoNebulaBusinessMetricsQueryv10' ] } } },{ displayName: 'Request', name: 'request', type: 'json', required: true, default: '{ "data": { "journeyIds": [ "" ] } }', description: 'Request body', displayOptions: { show: { endpoint: [ 'GetJourneySummaryitems' ], domain: [ 'FenergoNebulaBusinessMetricsQueryv10' ] } } }
+    }, { displayName: 'Request', name: 'request', type: 'json', required: true, default: '{ "data": { "startDate": "startDate", "endDate": "endDate", "numberOfRecordsToSkip": 0, "recordLimit": 0 } }', description: 'Request body', displayOptions: { show: { endpoint: [ 'GetJourneyCompletedDailyRecordsByDateRange' ], domain: [ 'FenergoNebulaBusinessMetricsQueryv10' ] } } },{ displayName: 'Request', name: 'request', type: 'json', required: true, default: '{ "data": { "journeyIds": [ "" ] } }', description: 'Request body', displayOptions: { show: { endpoint: [ 'GetJourneySummaryitems' ], domain: [ 'FenergoNebulaBusinessMetricsQueryv10' ] } } },{ displayName: 'Request', name: 'request', type: 'json', required: true, default: '{ "data": { "startDate": "startDate", "endDate": "endDate", "numberOfRecordsToSkip": 0, "recordLimit": 0 } }', description: 'Request body', displayOptions: { show: { endpoint: [ 'GetTaskDailyMetricsByDateRange' ], domain: [ 'FenergoNebulaBusinessMetricsQueryv10' ] } } }
 ];
 
 async function ExecuteFenergoNebulaBusinessMetricsQueryv10(base: IExecuteFunctions): Promise < INodeExecutionData[][] > {
@@ -60,6 +60,11 @@ requestOptions.body = base.getNodeParameter('request', 0) as string; requestOpti
 case 'GetJourneySummaryitems': 
 requestOptions.method = 'POST';
 requestOptions.uri = 'https://api.fenergox.com/businessmetricsquery/api/journeysummary';
+
+requestOptions.body = base.getNodeParameter('request', 0) as string; requestOptions.json = true;break;
+case 'GetTaskDailyMetricsByDateRange': 
+requestOptions.method = 'POST';
+requestOptions.uri = 'https://api.fenergox.com/businessmetricsquery/api/taskdailymetrics/gettaskdailymetricsbydaterange';
 
 requestOptions.body = base.getNodeParameter('request', 0) as string; requestOptions.json = true;break;
 }
